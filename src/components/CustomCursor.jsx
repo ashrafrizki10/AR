@@ -11,6 +11,7 @@ const CustomCursor = () => {
 
     let mouseX = 0, mouseY = 0
     let trailX = 0, trailY = 0
+    let animationId = null
 
     const onMove = (e) => {
       mouseX = e.clientX
@@ -22,22 +23,38 @@ const CustomCursor = () => {
       trailX += (mouseX - trailX) * 0.12
       trailY += (mouseY - trailY) * 0.12
       trail.style.transform = `translate(${trailX - 20}px, ${trailY - 20}px)`
-      requestAnimationFrame(animate)
+      animationId = requestAnimationFrame(animate)
     }
 
-    const onEnter = () => cursor.style.transform += ' scale(1.5)'
-    const onLeave = () => cursor.style.transform = cursor.style.transform.replace(' scale(1.5)', '')
+    const onMouseEnter = (e) => {
+      const target = e.target.closest('a, button, [role="button"]')
+      if (target) {
+        cursor.style.transform += ' scale(1.5)'
+        trail.style.borderColor = 'rgba(6,182,212,0.9)'
+        trail.style.borderWidth = '2px'
+      }
+    }
+
+    const onMouseLeave = (e) => {
+      const target = e.target.closest('a, button, [role="button"]')
+      if (target) {
+        cursor.style.transform = cursor.style.transform.replace(' scale(1.5)', '')
+        trail.style.borderColor = 'rgba(6,182,212,0.6)'
+        trail.style.borderWidth = '1px'
+      }
+    }
 
     document.addEventListener('mousemove', onMove)
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', onEnter)
-      el.addEventListener('mouseleave', onLeave)
-    })
+    document.addEventListener('mouseover', onMouseEnter)
+    document.addEventListener('mouseout', onMouseLeave)
 
     animate()
 
     return () => {
       document.removeEventListener('mousemove', onMove)
+      document.removeEventListener('mouseover', onMouseEnter)
+      document.removeEventListener('mouseout', onMouseLeave)
+      if (animationId) cancelAnimationFrame(animationId)
     }
   }, [])
 
@@ -58,6 +75,7 @@ const CustomCursor = () => {
         style={{
           border: '1px solid rgba(6,182,212,0.6)',
           willChange: 'transform',
+          transition: 'border-color 0.2s ease, border-width 0.2s ease',
         }}
       />
     </>
@@ -65,3 +83,4 @@ const CustomCursor = () => {
 }
 
 export default CustomCursor
+

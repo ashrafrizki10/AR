@@ -223,23 +223,42 @@ const Skills = ({ darkMode }) => {
                   🥽
                 </div>
                 {/* Orbiting skills */}
-                {['⚛️', '🎮', '🌐', '⚡'].map((emoji, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-8 h-8 rounded-full glass flex items-center justify-center text-sm"
-                    style={{ border: '1px solid rgba(6,182,212,0.2)', top: '50%', left: '50%', marginTop: -16, marginLeft: -16 }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 6 + i, repeat: Infinity, ease: 'linear' }}
-                    initial={{ rotate: i * 90 }}
-                  >
-                    <motion.span
-                      animate={{ rotate: -(360) }}
-                      transition={{ duration: 6 + i, repeat: Infinity, ease: 'linear' }}
+                {['⚛️', '🎮', '🌐', '⚡'].map((emoji, i) => {
+                  const radius = 60
+                  const angleStart = (i * Math.PI * 2) / 4
+                  return (
+                    <motion.div
+                      key={i}
+                      className="absolute w-8 h-8 rounded-full glass flex items-center justify-center text-sm"
+                      style={{
+                        border: '1px solid rgba(6,182,212,0.2)',
+                        top: '50%',
+                        left: '50%',
+                        marginTop: -16,
+                        marginLeft: -16,
+                      }}
+                      animate={{
+                        x: [
+                          Math.cos(angleStart) * radius,
+                          Math.cos(angleStart + Math.PI) * radius,
+                          Math.cos(angleStart + Math.PI * 2) * radius,
+                        ],
+                        y: [
+                          Math.sin(angleStart) * radius,
+                          Math.sin(angleStart + Math.PI) * radius,
+                          Math.sin(angleStart + Math.PI * 2) * radius,
+                        ],
+                      }}
+                      transition={{
+                        duration: 6 + i,
+                        repeat: Infinity,
+                        ease: 'linear',
+                      }}
                     >
                       {emoji}
-                    </motion.span>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  )
+                })}
               </div>
             </div>
           </motion.div>
