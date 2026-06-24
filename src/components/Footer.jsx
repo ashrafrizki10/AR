@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const SOCIALS = [
   { icon: '🐱', label: 'GitHub', href: 'https://github.com/ashrafrizki10' },
   { icon: '🔗', label: 'LinkedIn', href: 'https://www.linkedin.com/in/ashraf-undefined-b68144419' },
-  { icon: '📷', label: 'Instagram', href: 'https://www.instagram.com/xwz_ashraf?igsh=N3c2azhteTQ4c2Q5' },
+  { icon: '📷', label: 'Instagram', href: 'https://www.instagram.com/_ashraf_xr' },
   { icon: '𝕏', label: 'X', href: 'https://x.com/rizki_xr' },
   { icon: '💬', label: 'WhatsApp', href: 'https://wa.me/212721337413' },
 ]

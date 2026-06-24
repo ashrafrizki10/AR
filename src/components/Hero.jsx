@@ -10,7 +10,7 @@ const ROLES = [
 ]
 
 const SOCIALS = [
-  { icon: '📷', label: 'Instagram', href: 'https://www.instagram.com/xwz_ashraf?igsh=N3c2azhteTQ4c2Q5', color: '#e1306c' },
+  { icon: '📷', label: 'Instagram', href: 'https://www.instagram.com/_ashraf_xr', color: '#e1306c' },
   { icon: '💬', label: 'WhatsApp', href: 'https://wa.me/212721337413', color: '#25d366' },
   { icon: '🐱', label: 'GitHub', href: 'https://github.com/ashrafrizki10', color: '#ffffff' },
   { icon: '𝕏', label: 'X / Twitter', href: 'https://x.com/rizki_xr', color: '#1da1f2' },
