@@ -140,8 +140,8 @@ const Contact = ({ darkMode }) => {
               >
                 <span>
                   {status === 'sending' ? '⏳ Sending...' :
-                   status === 'sent' ? '✅ Message Sent!' :
-                   '🚀 Send Message'}
+                    status === 'sent' ? '✅ Message Sent!' :
+                      '🚀 Send Message'}
                 </span>
               </motion.button>
             </form>
