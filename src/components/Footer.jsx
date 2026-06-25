@@ -35,8 +35,10 @@ const Footer = ({ darkMode }) => {
             >
               AR
             </span>
-            <span className={`text-lg font-black ml-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}
-              style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <span
+              className={`text-lg font-black ml-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}
+              style={{ fontFamily: 'Orbitron, sans-serif' }}
+            >
               Portfolio
             </span>
           </div>

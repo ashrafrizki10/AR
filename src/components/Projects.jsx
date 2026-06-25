@@ -109,9 +109,9 @@ const ProjectCard = ({ project, darkMode, index }) => {
         rotateY: tilt.y,
         transformStyle: 'preserve-3d',
         perspective: '1000px',
+        ...(project.featured ? { '--tw-ring-color': project.color + '33' } : {}),
       }}
       className={`glass-card p-6 relative overflow-hidden cursor-pointer ${project.featured ? 'ring-1' : ''}`}
-      {...(project.featured ? { style: { '--tw-ring-color': project.color + '33' } } : {})}
     >
       {project.featured && (
         <div

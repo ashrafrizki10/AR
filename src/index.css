@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;700;900&display=swap');
 
 /* ─── CSS Variables ─────────────────────────────────── */
 :root {
@@ -297,3 +297,31 @@ section {
 
 /* ─── Custom Selection ──────────────────────────────── */
 ::selection { background: rgba(6,182,212,0.3); color: white; }
+
+/* ─── Light Mode Overrides ──────────────────────────── */
+body.light .skill-bar {
+  background: rgba(0,0,0,0.06);
+}
+
+body.light .grid-bg {
+  background-image:
+    linear-gradient(rgba(6,182,212,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6,182,212,0.06) 1px, transparent 1px);
+}
+
+body.light ::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+body.light .glass-card:hover {
+  background: rgba(6,182,212,0.08);
+  box-shadow: 0 20px 60px rgba(6,182,212,0.08), 0 0 40px rgba(6,182,212,0.04);
+}
+
+body.light .btn-outline {
+  border-color: rgba(6,182,212,0.6);
+}
+
+body.light .btn-outline:hover {
+  background: rgba(6,182,212,0.08);
+}

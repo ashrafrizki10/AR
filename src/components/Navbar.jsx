@@ -55,8 +55,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           >
             AR
           </span>
-          <span className={`text-xl font-black ml-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}
-            style={{ fontFamily: 'Orbitron, sans-serif' }}>
+          <span
+            className={`text-xl font-black ml-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}
+            style={{ fontFamily: 'Orbitron, sans-serif' }}
+          >
             Portfolio
           </span>
         </motion.div>
